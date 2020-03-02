@@ -1,0 +1,34 @@
+Step-By-Step Instructions to Install MESA:
+
+0) Pre-requisite Libraries:
+    a) For Fedora: binutils, make, perl, libX11, libX11-devel, zlib, zlib-devel, tcsh, crlibm, crlibm-devel, makedepf90
+    b) For Ubuntu: binutils, make, perl, libx11-6, libx11-dev, zlibg, zlibg-dev, tcsh
+
+1) Create a MESA_DIR. (say MESA_DIR = /home/user/softwares/mesa)
+    a) mkdir MESA_DIR
+       cd MESA_DIR
+
+    b) Download latest MESA-SDK.
+       https://www.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-20171120.tar.gz
+
+    c) Download latest MESA release.
+       https://sourceforge.net/projects/mesa/files/releases/mesa-r10108.zip/download
+
+2) tar -xf mesasdk-x86_64-linux-20171120.tar.gz
+
+3) unzip -K mesa-r10108.zip
+
+4) Set the Environment variables in .bashrc/.zshrc:-
+    export MESASDK_ROOT=/home/user/softwares/mesasdk
+    export MESA_DIR=/home/user/softwares/mesa/mesa-r10108
+    export OMP_NUM_THREADS=4
+
+5) Install MESASDK and Refresh Bash Shell:-
+    a) source $MESASDK_ROOT/bin/mesasdk_init.sh
+    b) source .bashrc
+
+6) chmod u+x -R mesa-r10108
+
+7) Install MESA:
+    a) cd MESA_DIR
+    b) ./install
